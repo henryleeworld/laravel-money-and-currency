@@ -1,4 +1,4 @@
-# Laravel 9 錢與貨幣
+# Laravel 10 錢與貨幣
 
 引入 brick 的 money 套件來擴增錢與貨幣，在算錢時，會遇到必須進位捨去的情況，在電腦中浮點數計算會有誤差這件事，電腦沒辦法無止境地儲存位數，勢必造成誤差，而這是財務運算所不允許的。
 
@@ -26,5 +26,5 @@ $ php artisan migrate --seed
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/rsMPc3I.png)
+![](https://i.imgur.com/Ct0CwVN.png)
 > 處理不只一種貨幣，需考量貨幣單位，以及貨幣之間的計算與轉換
