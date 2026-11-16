@@ -12,9 +12,14 @@ class Money implements CastsAttributes
      * Cast the given value.
      *
      * @param  array<string, mixed>  $attributes
+     * @return array<string, mixed>
      */
-    public function get(Model $model, string $key, mixed $value, array $attributes): mixed
-    {
+    public function get(
+        Model $model,
+        string $key,
+        mixed $value,
+        array $attributes,
+    ): BrickMoney {
         return BrickMoney::ofMinor($attributes['price'], $attributes['currency']);
     }
  
@@ -23,8 +28,12 @@ class Money implements CastsAttributes
      *
      * @param  array<string, mixed>  $attributes
      */
-    public function set(Model $model, string $key, mixed $value, array $attributes): mixed
-    {
+    public function set(
+        Model $model,
+        string $key,
+        mixed $value,
+        array $attributes,
+    ): string {
         return (! $value instanceof BrickMoney) ? $value : $value->getMinorAmount()->toInt();
     }
 }
